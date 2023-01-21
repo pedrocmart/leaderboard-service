@@ -212,9 +212,9 @@ In this scenario, you must use the type `at`, followed by the position you want 
 
 **Example:**
 
-Below we define `type` as `at10/2`, meaning 3 users around position 10th of the ranking, that is positioned 8th, 9th, 10th, 11th, 12th.
+Below we define `type` as `at10/2`, meaning 2 users around position 10th of the ranking, that is positioned 8th, 9th, 10th, 11th, 12th.
 
-[GET] http://0.0.0.0:8894/ranking?type=top3
+`[GET]` http://0.0.0.0:8894/ranking?type=at10/2
 
 Response:
 ```
