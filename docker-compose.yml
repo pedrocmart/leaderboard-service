@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+
+  leaderboardservice:
+    build: .
+    image: leaderboardservice
+    container_name: leaderboardservice
+    restart: always
+    ports:
+      - "8894:8894"
+    security_opt:
+      - "seccomp:unconfined" # Extra option to allow debugging.
+    cap_add:
+      - SYS_PTRACE # Recommended option for debugging only.
+
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "8894"
+
+
+    extra_hosts:
+      - "hostname:127.0.0.1"
