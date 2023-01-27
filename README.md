@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Description of the task](#description)
 - [Solution](#solution)
-    - [Explaining a little bit of the code](#explaining)
     - [Requirements](#requirements-to-install)
     - [Build local development](#buildlocal)
     - [Running Tests](#tests)
@@ -74,26 +73,6 @@ Requirements:
 
 
 # Solution
-
-<a id="explaining"></a>
-## Explaining a little bit of the code:
-
-In the `main.go` file, I initialize the Core struct. This is going to be used throughout the whole code, containing the services, store, and request response. This last one is an interface that can handle errors, responses and read JSON body. 
-Further, the NewCoreService will return an implementation of the HTTP interface which is a collection of HTTP functions.
-After that, I create an in-memory database, and finally connect the handlers to my router. 
-I have also a NotFound handler, to make sure the service can be accessed only from the two APIs provided.
-
-When it comes to interfaces, we have a Service interface, which handles Submit Score and Get Ranking, a Store interface, responsible for all the database queries and transactions, and a Request Response interface, as previously explained.
-
-The unit tests were implemented for the core services and handlers. `moq` was used to mock responses and errors.
-
-A Makefile was added to make life easier when running command lines :) 
-
-The [APIs](#APIs) describes more when it comes to business rules decisions that were left open intentionally.
-
-**Enjoy! :)**
-
-
 
 <a id="requirements-to-install"></a>
 ## Requirements to install
